@@ -122,6 +122,63 @@ main {
 #seeMore a:hover{
   color: rgb(171, 203, 92);
 }
+
+/* Chi tiet san pham */
+.hinhanhchitiet-container{
+  margin: 30px;
+  text-align: center;
+}
+.hinhanhchitiet-container img{
+  width: 300px;
+  height: 400px;
+  margin: 20px auto;
+  border: 1px solid rgb(67, 89, 17);
+  border-radius: 5px;
+}
+#chitietsp-container{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 20px;
+}
+.chitietsp {
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.chitietTen .tensp{
+  color: rgb(67, 89, 17);
+  font-size: 28px;
+  font-weight: 700;
+}
+.chitietTen .price{
+  color: rgb(67, 89, 17);
+  font-size: 23px;
+  font-weight: 700;
+}
+.dathang input{
+  border: 1px solid rgb(171, 203, 92);
+  border-radius: 7px;
+}
+.dathang{
+  display: flex;
+  flex-direction: column;
+}
+.dathang .soluong{
+  width: 70px;
+  height: 40px;
+  margin: 10px;
+  text-align: center;
+}
+.dathang .dathang-btn{
+  width: 180px;
+  margin: 10px;
+  background-color: rgb(171, 203, 92);
+}
+.dathang .dathang-btn:hover{
+  background-color: rgb(67, 89, 17);
+  color: #fff;
+}
 /* Footer */
 
 footer {

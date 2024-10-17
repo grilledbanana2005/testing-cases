@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sản Phẩm</title>
+    <title>Sản phẩm</title>
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="icon" href="./images/logo.png" />
     <link
@@ -23,7 +23,6 @@
     </div>
     <header>
       <div class="header_container navbar navbar-expand-md" id="navbar-Edit">
-
         <button
           class="navbar-toggler"
           data-bs-toggle="collapse"
@@ -45,11 +44,25 @@
       </div>
     </header>
     <main>
-      <div class="container">
-        <h1 class="tieuDe1">Sản Phẩm</h1>
-        <hr>
-        <div class="products_container">
-        </div>  
+        <div id="chitietsp-container" class="container">
+            <div class="hinhanhchitiet-container">
+                <img src="images/products/sp1.png" >
+            </div>
+            <div class="chitietsp">
+                <div class="chitietTen row">
+                    <p class="tensp">Tên Sản phẩm</p>
+                    <p class="price">1.000.000&nbsp;₫</p>
+                </div>
+                <div class="chitietMota row">
+                    <p>This flowering bonsai produces blooms during the spring and possibly during the fall with the proper care. Its blush (pink) blooms can add a refreshing touch to a room. The bonsai's soft green leaves are contrasted by the blooms.</p>
+                </div>
+                <form class="dathang row">
+                    <input type="number" value="1" min="1" class="soluong">
+                    
+                    <input class="btn dathang-btn" type="submit" value="Thêm vào giỏ hàng">
+                </form>
+            </div>
+        </div>
     </main>
     <footer>
       <div class="row">
@@ -97,5 +110,19 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const product = JSON.parse(localStorage.getItem('selectedProduct'));
+
+        if (product) {
+          document.querySelector('.hinhanhchitiet-container img').src = product.image;
+          document.querySelector('.tensp').textContent = product.name;
+          document.querySelector('.price').textContent = product.price.toLocaleString('vi-VN', {
+              style: 'currency',
+              currency: 'VND'
+          });
+         } 
+        });
+  </script>  
   </body>
 </html>

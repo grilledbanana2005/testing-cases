@@ -78,21 +78,37 @@ let productItem =
 
 let productHTML = '';
 
-const productDisplayer = document.querySelector('.products_container');
-
-productItem.forEach((product) => {
-    const productPrice = product.price.toLocaleString('vi-VN', {
-        style: 'currency',
-        currency: 'VND'
+    productItem.forEach((product) => {
+        const productPrice = product.price.toLocaleString('vi-VN', {
+            style: 'currency',
+            currency: 'VND'
+        });
+        productHTML += `
+        <div class="product">
+            <img id="${product.id}" src="${product.image}">
+            <h3 id="${product.id}">${product.name}</h3>
+            <h4>${productPrice}</h4>
+      </div>`
     });
-    productHTML += `
-    <div class="product">
-        <img id="${product.id}" src="${product.image}">
-        <h3 id="${product.id}" >${product.name}</h3>
-        <h4>${productPrice}</h4>
-  </div>`
+
+    document.querySelector('.products_container').innerHTML = productHTML;
+
+// hien thi chi tiet san pham
+
+function loadDetail(productId) {
+    const product = productItem.find(item => item.id === productId);
+
+    if (product) {
+        localStorage.setItem('selectedProduct', JSON.stringify(product));
+        window.location.href = 'chitiet.html';
+    }
+}
+
+document.querySelectorAll('.product img, .product h3').forEach(element => {
+    element.addEventListener('click', (sanpham) => {
+        const productId = sanpham.target.id;  
+        loadDetail(productId); 
+    });
 });
 
-productDisplayer.innerHTML = productHTML;
 
-// hien thi hinh anh san pham 
