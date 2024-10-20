@@ -238,3 +238,22 @@ footer .top img {
   text-align: center;
   padding: 5px;
 }
+
+.tieuDe3{
+  color: rgb(67, 89, 17);
+  text-align: left;
+  padding-top: 9px;
+}/* Gioi thieu */
+.gioithieu{
+  text-align: justify;
+  padding: 9px;
+  font-size: 17px;
+  line-height: 30px;
+}
+#please{
+  font-weight: 600;
+  text-align: center;
+  font-size: larger;
+  color: rgb(67, 89, 17);
+  text-decoration: none;
+}
