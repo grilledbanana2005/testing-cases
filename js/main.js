@@ -74,41 +74,84 @@ let productItem =
     }
 ];
 
+let gioHang = [];
+
 // hien thi hinh anh san pham 
 
 let productHTML = '';
 
-    productItem.forEach((product) => {
-        const productPrice = product.price.toLocaleString('vi-VN', {
-            style: 'currency',
-            currency: 'VND'
-        });
-        productHTML += `
-        <div class="product">
-            <img id="${product.id}" src="${product.image}">
-            <h3 id="${product.id}">${product.name}</h3>
-            <h4>${productPrice}</h4>
-      </div>`
+productItem.forEach((product) => {
+    const productPrice = product.price.toLocaleString('vi-VN', {
+        style: 'currency',
+        currency: 'VND'
     });
-
-    document.querySelector('.products_container').innerHTML = productHTML;
-
-// hien thi chi tiet san pham
-
-function loadDetail(productId) {
-    const product = productItem.find(item => item.id === productId);
-
-    if (product) {
-        localStorage.setItem('selectedProduct', JSON.stringify(product));
-        window.location.href = 'chitiet.html';
-    }
-}
-
-document.querySelectorAll('.product img, .product h3').forEach(element => {
-    element.addEventListener('click', (sanpham) => {
-        const productId = sanpham.target.id;  
-        loadDetail(productId); 
-    });
+    productHTML += `
+    <div class="product">
+        <img id="${product.id}" src="${product.image}">
+        <h3 id="${product.id}">${product.name}</h3>
+        <h4>${productPrice}</h4>
+            <select class="quantitySelector-${product.id}">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <button class="btn btn-success mx-auto nutDatHang" id="nutDatHang" data-product-id="${product.id}"> Thêm vào Giỏ Hàng</button>
+        
+    </div>`
 });
 
+document.querySelector('.products_container').innerHTML = productHTML;
 
+// them vao gio hang
+
+document.querySelectorAll('.nutDatHang').forEach((button) => {
+    button.addEventListener('click', () => {
+        const productId = button.dataset.productId;
+        let trungLap;
+
+        gioHang.forEach((sanPham) => {
+            if (productId === sanPham.productId)
+            {
+                trungLap = sanPham;
+            }
+        })
+
+        const quantitySelector = document.querySelector(`.quantitySelector-${productId}`);
+        const quantity = Number(quantitySelector.value);
+        
+        if (trungLap) {
+            trungLap.quantity+=quantity;
+        } else {
+            gioHang.push({
+                productId: productId,
+                quantity: quantity
+            })
+        }
+        
+        console.log(gioHang);
+    })
+})
+
+//Lien He form
+function contactForm(frm){
+    var emailReg = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    var contactEmail = document.getElementById("contactEmail");
+    var contactText = document.getElementById("contactTextArea");
+    if(emailReg.test(contactEmail.value) == false){
+        alert("Email không hợp lệ, vui lòng nhập lại Email của bạn!");
+        return false;
+    }
+    if (contactText.value.length < 10){
+        alert("Noi dung khong hop le, vui lòng nhập lại nội dung cần liên hệ!");
+        return false;
+    }
+    alert("Cảm ơn phản hồi của bạn, chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất");
+    return true;
+}

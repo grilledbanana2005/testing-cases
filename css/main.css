@@ -45,6 +45,11 @@ main {
   text-align: center;
   padding-top: 9px;
 }
+.tieuDe3{
+  color: rgb(67, 89, 17);
+  text-align: left;
+  padding-top: 9px;
+}
 .homepage_container .caption {
   background-color:rgb(171, 203, 92) ;
   height: 40px;
@@ -74,7 +79,7 @@ main {
 .product h4 {
   font-size: 18px;
 }
-.products_container {
+.products_container , .products_container_1, .products_container_2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -179,6 +184,20 @@ main {
   background-color: rgb(67, 89, 17);
   color: #fff;
 }
+/* Gioi thieu */
+.gioithieu{
+  text-align: justify;
+  padding: 9px;
+  font-size: 17px;
+  line-height: 30px;
+}
+#please{
+  font-weight: 600;
+  text-align: center;
+  font-size: larger;
+  color: rgb(67, 89, 17);
+  text-decoration: none;
+}
 /* Footer */
 
 footer {
@@ -239,21 +258,55 @@ footer .top img {
   padding: 5px;
 }
 
-.tieuDe3{
-  color: rgb(67, 89, 17);
-  text-align: left;
-  padding-top: 9px;
-}/* Gioi thieu */
-.gioithieu{
-  text-align: justify;
-  padding: 9px;
-  font-size: 17px;
-  line-height: 30px;
+/* San Pham */
+#nutDatHang {
+  width: 200px;
 }
-#please{
-  font-weight: 600;
-  text-align: center;
-  font-size: larger;
+.product img {
+  flex:1;
+} 
+.product h3 {
+  flex:0;
+}
+.prodcut button {
+  flex:2;
+}
+.product {
+  padding-bottom: 20px;
+}
+.quantitySelector {
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  width: 50px;
+}
+#nutDatHang {
+  width: 170px;
+}
+
+/*Lien he*/
+
+#contactForm{
+  max-width: 700px;
+  margin: auto;
+  border: 1px solid rgb(171, 203, 92);
+  border-radius: 5px;
+  padding: 20px;
+}
+#contactForm label{
   color: rgb(67, 89, 17);
-  text-decoration: none;
+  font-size:x-large;
+  font-weight: 600;
+}
+#contactSubmit{
+  height: 40px;
+  width: 60px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(171, 203, 92);
+  color: rgb(67, 89, 17);
+  font-weight: 500;
+}
+#contactSubmit:hover{
+  color: #fff;
 }

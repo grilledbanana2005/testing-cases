@@ -20,13 +20,11 @@
   <body>
     <header>
       <div class="header_container">
-       <a href="./trangchu.html"> <img src="images/banner.png" id="bannerImg"></a>
+        <figure class="figure">
+          <a href="./trangchu.html"> <img class="figure-img img-fluid rounded" src="images/banner.png" id="bannerImg"></a>
+        </figure>
       </div>
       <div class="header_container navbar navbar-expand-md" id="navbar-Edit">
-        <!-- <a href="./trangchu.html">
-          <img class="logo navbar-brand" src="./images/logo.png" />
-        </a> -->
-
         <button
           class="navbar-toggler"
           data-bs-toggle="collapse"
@@ -47,79 +45,22 @@
         </div>
       </div>
     </header>
-    <main class="homepage_container">
+    <main>
       <div class="container">
-        <h1 class="tieuDe1">Trang Chủ</h1>
-        <div class="row">
-          <div id="runimg" class="carousel slide">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <a href="./sanpham.html">
-                <img src="images/trangchu1.png" class="w-100">
-              </a>
-            </div>
-              <div class="carousel-item">
-                <a href="./sanpham.html">
-                <img src="images/trangchu2.png" class="w-100">
-              </a>
-            </div>
-              <div class="carousel-item">
-                <a href="./sanpham.html">
-                <img src="images/trangchu3.png" class="w-100">
-              </a>
-            </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#runimg" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-               <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#runimg" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-       <hr>
-       <div class="caption">
-        <div class="caption-text">
-          NỔI BẬT
-        </div>
+        <h1 class="tieuDe1">Liên Hệ</h1>
+        <hr>
+        <form id="contactForm" action="lienhe.html" method="post" onsubmit = "return contactForm(this)">
+          <div class="mb-3">
+            <label for="contactEmail" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="contactEmail" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="contactTextArea" class="form-label">Để lại góp ý của bạn:</label>
+            <textarea class="form-control" id="contactTextArea" rows="3"></textarea>
+          </div>
+          <input id="contactSubmit" type="submit" value="Gửi">
+        </form>
       </div>
-    
-      </div>
-      <div class="products_container">
-        <div class="product">
-          <img id="sp01" src="images/products/sp1.png">
-          <h3 id="sp01" >Cây Hoa Hồng Mini</h3>
-          <h4>1.000.000&nbsp;₫</h4>
-        </div>
-        <div class="product">
-          <img id="sp02" src="images/products/sp2.png">
-          <h3 id="sp02" >Cây Lantana</h3>
-          <h4>890.000&nbsp;₫</h4>
-        </div>
-        <div class="product">
-          <img id="sp03"  src="images/products/sp3.png">
-          <h3 id="sp03" >Cây Pyracantha</h3>
-          <h4>890.000&nbsp;₫</h4>
-        </div>
-        <div class="product">
-          <img id="sp04"  src="images/products/sp4.png">
-          <h3 id="sp04" >Cây Trà Hoa</h3>
-          <h4>4.119.000&nbsp;₫</h4>
-        </div>
-        <div class="product">
-          <img id="sp05"  src="images/products/sp5.png">
-          <h3 id="sp05" >Cây Đỗ Quyên-Hoa Đỏ</h3>
-          <h4>1.119.000&nbsp;₫</h4>
-        </div>
-        <div class="product">
-          <img id="sp06" src="images/products/sp6.png">
-          <h3 id="sp06">Cây Trà Hoa Nhỏ</h3>
-          <h4>2.120.000&nbsp;₫</h4>
-        </div>
-      </div>
-    </div>
-   </div>
     </main>
     <footer>
       <div class="footer-content row">
@@ -149,7 +90,9 @@
           </ul>
         </div>
         <div class="footerImage col">
-          <img src="images/footerimg.png" id="footerImg" />
+          <figure class="figure">
+            <img class="figure-img img-fluid rounded" src="images/footerimg.png" id="footerImg" />
+          </figure>
         </div>
       </div>
       <a href="#" class="top">
