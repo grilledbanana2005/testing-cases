@@ -111,10 +111,8 @@ document.querySelector('.products_container').innerHTML = productHTML;
 
 // them vao gio hang
 
-document.querySelectorAll('.nutDatHang').forEach((button) => {
-    button.addEventListener('click', () => {
-        const productId = button.dataset.productId;
-        let trungLap;
+function themVaoGioHang(productId){
+    let trungLap;
 
         gioHang.forEach((sanPham) => {
             if (productId === sanPham.productId)
@@ -135,7 +133,26 @@ document.querySelectorAll('.nutDatHang').forEach((button) => {
             })
         }
         
-        console.log(gioHang);
+        console.log(gioHang); 
+}
+
+
+//cap nhat gio hang
+
+function capNhatGioHang() {
+    let soluong = 0;
+    gioHang.forEach((sanPham)=>{
+        soluong += sanPham.quantity;
+        console.log(soluong);
+    })
+}
+
+//add function cho nutdathang
+document.querySelectorAll('.nutDatHang').forEach((button) => {
+    button.addEventListener('click', () => {
+        const productId = button.dataset.productId;
+        themVaoGioHang(productId);
+        capNhatGioHang();
     })
 })
 
