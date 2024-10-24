@@ -160,6 +160,7 @@ document.querySelectorAll('.nutDatHang').forEach((button) => {
                 quantity: quantity
             })
         }
+        alert('Đặt hàng thành công!');
         luuSanPham();
     })
 })
