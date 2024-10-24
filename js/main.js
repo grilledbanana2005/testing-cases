@@ -76,7 +76,7 @@ let productItem =
     }
 ];
 
-let gioHang = 
+let gioHang = JSON.parse(localStorage.getItem('gioHang')) ||   
 [
     {
         productId: "sp06",
@@ -160,8 +160,7 @@ document.querySelectorAll('.nutDatHang').forEach((button) => {
                 quantity: quantity
             })
         }
-        
-        console.log(gioHang);
+        luuSanPham();
     })
 })
 
@@ -189,6 +188,7 @@ function contactForm(frm){
 
 function GioHangDisplaying() {
 let gioHangDisplayer = '';
+
 gioHang.forEach((sanPham)=>{
     const productId = sanPham.productId;
     let matchingProduct;
@@ -198,7 +198,8 @@ gioHang.forEach((sanPham)=>{
         {
             matchingProduct = product;
         }
-    })
+    });
+    
     gioHangDisplayer+=
     `
     <div class="row itemCart itemContainer-${matchingProduct.id}">
@@ -221,6 +222,8 @@ gioHang.forEach((sanPham)=>{
 })
 
 document.querySelector('.itemCartContainer').innerHTML = gioHangDisplayer;
+
+tinhTien();
 
 }
 
@@ -245,5 +248,51 @@ function xoaSanPham(productId) {
     })
     
     gioHang = gioHangMoi;
+    window.location.reload(1);
+    luuSanPham();
+    
+}
+
+function luuSanPham()
+{
+    localStorage.setItem('gioHang', JSON.stringify(gioHang));
+}
+
+function timSanPham(productId)
+{
+    let sanPhamCanTim;
+
+    productItem.forEach((product)=> {
+        if(product.id === productId)
+        {
+            sanPhamCanTim = product;
+        }
+    })
+
+    return sanPhamCanTim;
+}
+
+function tinhTien()
+{
+    let totalPrice = 0;
+    gioHang.forEach((sanPham) => {
+        let product = timSanPham(sanPham.productId);
+        totalPrice += product.price * sanPham.quantity;
+    })
+
+    document.querySelector('.tongThanhTien').innerHTML += totalPrice.toLocaleString('vi-VN', {
+        style: 'currency',
+        currency: 'VND'
+    });
+    if (gioHang.length === 0)
+    {
+        document.querySelector('.tongDonHang').innerHTML += ' ';
+    } else {
+        document.querySelector('.tongDonHang').innerHTML += Number(totalPrice+320000).toLocaleString('vi-VN', {
+            style: 'currency',
+            currency: 'VND'
+        });
+    }
+    
 
 }
