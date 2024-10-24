@@ -44,12 +44,15 @@ main {
   color: rgb(67, 89, 17);
   text-align: center;
   padding-top: 9px;
+  font-weight: 600;
 }
-.tieuDe3{
+.tieuDe3, .tieuDe4, .tieuDe5{
   color: rgb(67, 89, 17);
   text-align: left;
   padding-top: 9px;
+  font-weight: 600;
 }
+
 .homepage_container .caption {
   background-color:rgb(171, 203, 92) ;
   height: 40px;
@@ -127,63 +130,58 @@ main {
 #seeMore a:hover{
   color: rgb(171, 203, 92);
 }
+ /* San pham */
 
-/* Chi tiet san pham */
-.hinhanhchitiet-container{
-  margin: 30px;
+ #quantityButton{
   text-align: center;
-}
-.hinhanhchitiet-container img{
-  width: 300px;
-  height: 400px;
-  margin: 20px auto;
-  border: 1px solid rgb(67, 89, 17);
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  width: 40px;
   border-radius: 5px;
-}
-#chitietsp-container{
-  display: flex;
-  flex-wrap: wrap;
-  padding: 30px 20px;
-}
-.chitietsp {
-  width: 550px;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-.chitietTen .tensp{
-  color: rgb(67, 89, 17);
-  font-size: 28px;
-  font-weight: 700;
-}
-.chitietTen .price{
-  color: rgb(67, 89, 17);
-  font-size: 23px;
-  font-weight: 700;
-}
-.dathang input{
-  border: 1px solid rgb(171, 203, 92);
-  border-radius: 7px;
-}
-.dathang{
-  display: flex;
-  flex-direction: column;
-}
-.dathang .soluong{
-  width: 70px;
-  height: 40px;
-  margin: 10px;
+  border: 1px solid  rgb(171, 203, 92);
+ }
+ #nutDatHang{
   text-align: center;
-}
-.dathang .dathang-btn{
-  width: 180px;
-  margin: 10px;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  width: 40px;
+  border-radius: 5px;
+  border: none;
   background-color: rgb(171, 203, 92);
-}
-.dathang .dathang-btn:hover{
+  color:#fff;
+ }
+ #nutDatHang:hover{
   background-color: rgb(67, 89, 17);
   color: #fff;
+ }
+
+#nutDatHang {
+  width: 200px;
 }
+.product img {
+  flex:1;
+} 
+.product h3 {
+  flex:0;
+}
+.prodcut button {
+  flex:2;
+}
+.product {
+  padding-bottom: 20px;
+}
+.quantitySelector {
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  width: 50px;
+}
+#nutDatHang {
+  width: 170px;
+}
+
 /* Gioi thieu */
 .gioithieu{
   text-align: justify;
@@ -197,6 +195,77 @@ main {
   font-size: larger;
   color: rgb(67, 89, 17);
   text-decoration: none;
+}
+/* Gio hang */
+.Cart-container{
+  padding: 20px;
+}
+.itemCart{
+  border: 1px solid rgb(102, 102, 102);
+  border-radius: 5px;
+  margin: 10px;
+}
+.oderSumary{
+  border: 1px solid rgb(102, 102, 102);
+  border-radius: 5px;
+  margin: 10px;
+  margin-right: 0;
+  max-height: fit-content;
+}
+
+.deleteButton{
+  text-align: center;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  width: 40px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(171, 203, 92);
+  color:#fff;
+ }
+  .deleteButton:hover{
+  background-color: rgb(67, 89, 17);
+  color: #fff;
+ }
+ #oderButton{
+  height: 40px;
+  width: 100%;;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(171, 203, 92);
+  color: rgb(67, 89, 17);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+#oderButton:hover{
+  color: #fff;
+}
+ /*Lien he*/
+
+#contactForm{
+  max-width: 700px;
+  margin: auto;
+  border: 1px solid rgb(171, 203, 92);
+  border-radius: 5px;
+  padding: 20px;
+}
+#contactForm label{
+  color: rgb(67, 89, 17);
+  font-size:x-large;
+  font-weight: 600;
+}
+#contactSubmit{
+  height: 40px;
+  width: 60px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(171, 203, 92);
+  color: rgb(67, 89, 17);
+  font-weight: 500;
+}
+#contactSubmit:hover{
+  color: #fff;
 }
 /* Footer */
 
@@ -258,55 +327,4 @@ footer .top img {
   padding: 5px;
 }
 
-/* San Pham */
-#nutDatHang {
-  width: 200px;
-}
-.product img {
-  flex:1;
-} 
-.product h3 {
-  flex:0;
-}
-.prodcut button {
-  flex:2;
-}
-.product {
-  padding-bottom: 20px;
-}
-.quantitySelector {
-  padding-left: 10px;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  width: 50px;
-}
-#nutDatHang {
-  width: 170px;
-}
 
-/*Lien he*/
-
-#contactForm{
-  max-width: 700px;
-  margin: auto;
-  border: 1px solid rgb(171, 203, 92);
-  border-radius: 5px;
-  padding: 20px;
-}
-#contactForm label{
-  color: rgb(67, 89, 17);
-  font-size:x-large;
-  font-weight: 600;
-}
-#contactSubmit{
-  height: 40px;
-  width: 60px;
-  border: none;
-  border-radius: 5px;
-  background-color: rgb(171, 203, 92);
-  color: rgb(67, 89, 17);
-  font-weight: 500;
-}
-#contactSubmit:hover{
-  color: #fff;
-}
