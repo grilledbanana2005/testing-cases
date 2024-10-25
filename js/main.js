@@ -78,14 +78,7 @@ let productItem =
 
 let gioHang = JSON.parse(localStorage.getItem('gioHang')) ||   
 [
-    {
-        productId: "sp06",
-        quantity: 2
-    },
-    {
-        productId: "sp09",
-        quantity: 2
-    }
+    
 ];
 
 if (window.location.pathname.includes('sanpham.html')) {
@@ -160,7 +153,7 @@ document.querySelectorAll('.nutDatHang').forEach((button) => {
                 quantity: quantity
             })
         }
-        alert('Đặt hàng thành công!');
+        alert('Đặt hàng thành công !!');
         luuSanPham();
     })
 })
@@ -295,5 +288,93 @@ function tinhTien()
         });
     }
     
+}
 
+let signUpForm = document.getElementById("signUpForm");
+function signup() {
+  let username = document.getElementById("username");
+  let password = document.getElementById("password");
+  let email = document.getElementById("email");
+  let errorMessage = document.getElementById("error-message");
+  let emailReg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+  if (emailReg.test(email.value) == false) {
+    errorMessage.textContent = "Vui lòng nhập đúng địa chỉ email!";
+    errorMessage.style.display = "block";
+    return false;
+  }
+  if (username.value.length === 0) {
+    errorMessage.textContent = "Vui lòng nhập tên đăng nhập";
+    errorMessage.style.display = "block";
+    return false;
+  }
+  if (typeof localStorage[username.value] !== "undefined") {
+    errorMessage.textContent = "Vui lòng nhập tên đăng nhập khác!";
+    errorMessage.style.display = "block";
+    return false;
+  }
+  if (password.value.length == 0) {
+    errorMessage.textContent = "Vui lòng nhập mật khẩu!";
+    errorMessage.style.display = "block";
+    return false;
+  }
+  window.localStorage.setItem(username.value, password.value);
+  alert("Tạo tài khoản thành công.");
+  return true;
+}
+function checkAccount() {
+  let username = document.getElementById("username");
+  let password = document.getElementById("password");
+  let errorMessage = document.getElementById("error-message");
+
+  if (
+    typeof localStorage[username.value] !== "undefined" &&
+    window.localStorage.getItem(username.value) == password.value
+  ) {
+    alert("Đăng nhập thành công, chào mừng " + username.value);
+    window.localStorage.setItem("loginSuccesful", username.value);
+    return true;
+  }
+  errorMessage.textContent =
+    "Vui lòng kiểm tra lại tên đăng nhập hoặc mật khẩu!";
+  errorMessage.style.display = "block";
+  return false;
+}
+function logout() {
+  window.localStorage.removeItem("loginSuccesful");
+  alert("Đăng xuất thành công!");
+  window.location.reload();
+}
+if (
+  typeof localStorage["loginSuccesful"] !== "undefined" &&
+  window.localStorage.getItem("loginSuccesful") != 0
+) {
+  let signup = document.getElementById("signup");
+  let login = document.getElementById("login");
+  login.remove();
+  signup.remove();
+  let nav = document.querySelector("nav");
+  let cart = document.createElement("a");
+  cart.href = "./giohang.html";
+  cart.innerHTML = "Giỏ hàng";
+  nav.appendChild(cart);
+  let logout = document.createElement("a");
+  logout.href = "./trangchu.html";
+  logout.setAttribute("onclick", "logout()");
+  logout.innerHTML = "Đăng xuất";
+  nav.appendChild(logout);
+}
+
+function datHang() {
+    if (gioHang.length <= 0)
+    {
+        alert('Vui lòng thêm sản phẩm trước khi đặt !');
+        window.location.href = "sanpham.html";
+    } 
+    else {
+        alert('Đặt hàng thành công !');
+        localStorage.removeItem('gioHang');
+        window.location.href = "trangchu.html";
+    }
+    
 }

@@ -41,7 +41,6 @@
             <a href="./lienhe.html">Liên hệ</a>
             <a id="signup" href="./dangky.html">Đăng ký</a>
             <a id="login" href="./dangnhap.html">Đăng nhập</a>
-            <a href="./giohang.html">Gio Hang</a>
           </nav>
         </div>
       </div>
@@ -58,10 +57,14 @@
                 <hr>
                 <h5 class="tieuDe5 tongDonHang">Tổng đơn hàng: </h5>
                 <br>
-                <form action="giohang.html">
-                    <div>
-                        <input id="oderButton" type="submit" value="Đặt Hàng">
-                    </div>
+                
+                    <!-- <div>
+                        <input id="oderButton" type="submit" value="Đặt Hàng" onsubmit="datHang()">
+                    </div> -->
+                    <button class="btn datHang" id="oderButton" onclick="datHang()">
+                      Đặt hàng
+                    </button>
+                    <form action="giohang.html" onsubmit="datHang()"></form>
                 </form>
             </div>
         </div>

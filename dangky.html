@@ -20,12 +20,11 @@
   <body>
     <header>
       <div class="header_container">
-        <figure class="figure">
-          <a href="./trangchu.html"> <img class="figure-img img-fluid rounded" src="images/banner.png" id="bannerImg"></a>
-        </figure>
+        <a href="./trangchu.html">
+          <img src="images/banner.png" id="bannerImg"
+        /></a>
       </div>
       <div class="header_container navbar navbar-expand-md" id="navbar-Edit">
-
         <button
           class="navbar-toggler"
           data-bs-toggle="collapse"
@@ -47,7 +46,53 @@
       </div>
     </header>
     <main>
-     <form action="" enctype="application/x-www-form-urlencoded"></form>
+      <div class="signup_login_container container">
+        <h1>Tạo tài khoản</h1>
+        <div>Bạn đã có tài khoản? <a href="./dangnhap.html">Đăng nhập</a></div>
+        <div id="error-message" class="error-message"></div>
+        <form
+          action="./dangnhap.html"
+          id="signUpForm"
+          onsubmit="return signup()"
+          method="POST"
+          enctype="application/x-www-form-urlencoded"
+        >
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Email"
+            />
+            <label for="floatingInput">Email</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              placeholder="Tên người dùng"
+            />
+            <label for="floatingInput">Tên người dùng</label>
+          </div>
+          <div class="form-floating">
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              placeholder="Mật khẩu"
+            />
+            <label for="floatingPassword">Mật khẩu</label>
+          </div>
+
+          <div>
+            <input class="btn" type="submit" value="Đăng ký" />
+          </div>
+        </form>
+      </div>
     </main>
     <footer>
       <div class="footer-content row">
@@ -77,9 +122,7 @@
           </ul>
         </div>
         <div class="footerImage col">
-          <figure class="figure">
-            <img class="figure-img img-fluid rounded" src="images/footerimg.png" id="footerImg" />
-          </figure>
+          <img src="images/footerimg.png" id="footerImg" />
         </div>
       </div>
       <a href="#" class="top">

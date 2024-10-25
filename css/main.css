@@ -181,6 +181,21 @@ main {
 #nutDatHang {
   width: 170px;
 }
+#moTa{
+  text-align: center;
+  height: 36px;
+  margin: auto;
+  margin-bottom: 10px;
+  width: 70%;
+  border-radius: 5px;
+  border: 1px solid rgb(171, 203, 92);
+  background-color: white;
+  color:rgb(171, 203, 92);
+}
+#moTa:hover {
+  background-color: rgb(171, 203, 92);
+  color:white;
+}
 
 /* Gioi thieu */
 .gioithieu{
@@ -327,4 +342,57 @@ footer .top img {
   padding: 5px;
 }
 
-
+/* Đăng nhập, Đăng kí */
+.signup_login_container form,
+.error-message {
+  width: 333px;
+  margin: auto;
+}
+.signup_login_container h1,
+.error-message p {
+  margin: 13px;
+  text-align: center;
+}
+.signup_login_container a {
+  color: #435911;
+  font-weight: 700;
+  text-decoration: none;
+}
+.signup_login_container a:hover {
+  color: #ebbb2f;
+}
+.signup_login_container #forgotpassword {
+  display: block;
+  width: 120px;
+  margin: 9px auto 0;
+}
+.signup_login_container div {
+  text-align: center;
+}
+.signup_login_container input {
+  border: 1px solid #435911;
+  margin: 30px 0 0 0;
+}
+input[type="submit"] {
+  color: #fff;
+  background-color: #435911;
+  font-weight: 700;
+  width: 199px;
+  margin: 23px auto 0;
+}
+input[type="submit"]:hover {
+  color: #435911;
+  background-color: #fff;
+  border: 1px solid #435911;
+}
+.error-message {
+  color: #a94442;
+  background-color: #f2dede;
+  margin: 1em auto;
+  border-color: #d6e9c6;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 10px;
+  /* visibility: hidden; */
+  display: none;
+}

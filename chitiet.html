@@ -110,19 +110,5 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        const product = JSON.parse(localStorage.getItem('selectedProduct'));
-
-        if (product) {
-          document.querySelector('.hinhanhchitiet-container img').src = product.image;
-          document.querySelector('.tensp').textContent = product.name;
-          document.querySelector('.price').textContent = product.price.toLocaleString('vi-VN', {
-              style: 'currency',
-              currency: 'VND'
-          });
-         } 
-        });
-  </script>  
   </body>
 </html>
